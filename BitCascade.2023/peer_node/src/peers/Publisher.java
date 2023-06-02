@@ -92,7 +92,7 @@ public class Publisher extends UnicastRemoteObject implements Seed {
             // remoto announceFile del Tracker para publicar el fichero
             // (nº bloques disponible en getNumBlocks de esa clase)
             //
-            Publisher pub = new Publisher("mi_publisher", args[3], Integer.parseInt(args[4])); //----------- "mi_publisher" ???
+            Publisher pub = new Publisher(args[2], args[3], Integer.parseInt(args[4]));
             boolean res = trck.announceFile(pub, args[3], Integer.parseInt(args[4]), pub.getNumBlocks());
             
             if (!res) { // comprueba resultado

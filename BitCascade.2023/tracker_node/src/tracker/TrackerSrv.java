@@ -22,12 +22,13 @@ import interfaces.FileInfo;
 class TrackerSrv extends UnicastRemoteObject implements Tracker {
     public static final long serialVersionUID=1234567890L;
     String name;
-    HashMap<String, FileInfo> files = new HashMap<String, FileInfo>();
     // TODO 1: añadir los campos que se requieran
+    HashMap<String, FileInfo> files;
     
     public TrackerSrv(String n) throws RemoteException {
         name = n;
         // TODO 1: inicializar campos adicionales
+        files = new HashMap<String, FileInfo>();
     }
     // NO MODIFICAR: solo para depurar
     public String getName() throws RemoteException {
