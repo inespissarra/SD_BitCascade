@@ -117,7 +117,6 @@ public class DownloaderImpl extends UnicastRemoteObject implements Leech { //???
             }
             if (buf == null) return false;
             raf.seek(numBl * blockSize);
-            System.out.println("downloader write " + numBl * blockSize);
             raf.write(buf);
             lastBlock = numBl;
 	        // TODO 4: Notifica a los leeches posteriores (notifyBlock)
@@ -142,7 +141,6 @@ public class DownloaderImpl extends UnicastRemoteObject implements Leech { //???
     public byte [] read(int numBl) throws RemoteException { 
         try { //???
             if (numBl <= lastBlock) {
-                System.out.println("downloader read " + numBl);
                 // TODO 3: realiza lectura solicitada devolviendo lo leído en buf 
                 // Cuidado con último bloque que probablemente no estará completo
                 long fileSizeBytes = new File(path).length();
